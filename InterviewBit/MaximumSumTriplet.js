@@ -30,5 +30,6 @@ function tripleSum(arr) {
 	return tripleSum;
 }
 
+
 const result = tripleSum([2, 5, 3, 1, 4, 9]);
 console.log(result);
