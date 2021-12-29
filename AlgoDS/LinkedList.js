@@ -31,6 +31,12 @@ class LinkedList {
 			current = current.next;
 		}
 	}
+
+	insertNodeFront(data) {
+		const newNode = new Node(data);
+		newNode.next = this.head;
+		this.head = newNode;
+	}
 }
 
 const LL = new LinkedList();
@@ -38,4 +44,6 @@ LL.addNode(12);
 LL.addNode(14);
 LL.addNode(16);
 LL.addNode(18);
+LL.listNode();
+LL.insertNodeFront(10);
 LL.listNode();
