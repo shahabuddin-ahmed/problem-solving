@@ -38,7 +38,7 @@ class LinkedList {
 		this.head = newNode;
 	}
 
-	deleteNodeTail() {
+	deleteTailNode() {
 		let current = this.head;
 		if (!current || !current.next) {
 			return null;
@@ -50,6 +50,23 @@ class LinkedList {
 		console.log(this.head);
 		return this.head;
 	}
+
+	deleteHeadNode() {
+		let current = this.head;
+		if (!current || !current.next) {
+			return null;
+		}
+		current = current.next;
+		this.head = current;
+		console.log(this.head);
+		return this.head;
+
+		// this is optimal solution
+		// if (head == null) {
+		// 	return null;
+		//   }
+		//   return head.next;
+	}
 }
 
 const LL = new LinkedList();
@@ -60,4 +77,5 @@ LL.addNode(18);
 LL.listNode();
 LL.insertNodeFront(10);
 LL.listNode();
-LL.deleteNodeTail();
+LL.deleteTailNode();
+LL.deleteHeadNode();
