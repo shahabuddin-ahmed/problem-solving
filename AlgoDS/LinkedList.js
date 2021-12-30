@@ -49,6 +49,8 @@ class LinkedList {
 		current.next = null;
 		console.log(this.head);
 		return this.head;
+
+		// may be also optimized
 	}
 
 	deleteHeadNode() {
