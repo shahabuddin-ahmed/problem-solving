@@ -37,6 +37,19 @@ class LinkedList {
 		newNode.next = this.head;
 		this.head = newNode;
 	}
+
+	deleteNodeTail() {
+		let current = this.head;
+		if (!current || !current.next) {
+			return null;
+		}
+		while (current.next.next) {
+			current = current.next;
+		}
+		current.next = null;
+		console.log(this.head);
+		return this.head;
+	}
 }
 
 const LL = new LinkedList();
@@ -47,3 +60,4 @@ LL.addNode(18);
 LL.listNode();
 LL.insertNodeFront(10);
 LL.listNode();
+LL.deleteNodeTail();
