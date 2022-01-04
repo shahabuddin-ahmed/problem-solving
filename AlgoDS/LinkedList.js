@@ -27,7 +27,7 @@ class LinkedList {
 	listNode() {
 		let current = this.head;
 		while (current) {
-			console.log(current.node);
+			// console.log(current.node);
 			current = current.next;
 		}
 	}
@@ -47,7 +47,7 @@ class LinkedList {
 			current = current.next;
 		}
 		current.next = null;
-		console.log(this.head);
+		// console.log(this.head);
 		return this.head;
 
 		// may be also optimized
@@ -60,7 +60,7 @@ class LinkedList {
 		}
 		current = current.next;
 		this.head = current;
-		console.log(this.head);
+		// console.log(this.head);
 		return this.head;
 
 		// this is optimal solution
@@ -69,15 +69,46 @@ class LinkedList {
 		//   }
 		//   return head.next;
 	}
+
+	findMiddle() {
+		let count = 0;
+		let mid = 1;
+		let current = this.head;
+
+		while (current) {
+			current = current.next;
+			count++;
+		}
+
+		if (count % 2 === 0) {
+			count = count / 2 + 1;
+		} else {
+			count = Math.ceil(count / 2);
+		}
+
+		current = this.head;
+		while (current) {
+			if (mid === count) {
+				console.log(mid);
+				return current.node;
+			}
+			mid++;
+			current = current.next;
+		}
+	}
 }
 
 const LL = new LinkedList();
-LL.addNode(12);
-LL.addNode(14);
-LL.addNode(16);
-LL.addNode(18);
+LL.addNode(1);
+LL.addNode(2);
+LL.addNode(3);
+LL.addNode(4);
+LL.addNode(5);
 LL.listNode();
 LL.insertNodeFront(10);
 LL.listNode();
 LL.deleteTailNode();
+LL.listNode();
 LL.deleteHeadNode();
+LL.listNode();
+console.log(LL.findMiddle())
