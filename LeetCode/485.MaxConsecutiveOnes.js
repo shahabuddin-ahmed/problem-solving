@@ -6,8 +6,8 @@ function findMaxConsecutiveOnes(nums) {
 		} else {
 			if (count > max) {
 				max = count;
-				count = 0;
 			}
+			count = 0;
 		}
 	});
 
