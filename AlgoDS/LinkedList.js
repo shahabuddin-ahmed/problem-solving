@@ -27,7 +27,7 @@ class LinkedList {
 	listNode() {
 		let current = this.head;
 		while (current) {
-			// console.log(current.node);
+			console.log(current.node);
 			current = current.next;
 		}
 	}
@@ -89,26 +89,62 @@ class LinkedList {
 		current = this.head;
 		while (current) {
 			if (mid === count) {
-				console.log(mid);
 				return current.node;
 			}
 			mid++;
 			current = current.next;
 		}
 	}
+
+	deleteAtIndex(n) {
+		let current = this.head, counter = 0;
+		if (n === 0 && this.head) {
+			return this.head = this.head.next;
+		}
+
+		while (current) {
+			counter += 1;
+			if (counter === n && current.next) {
+				current.next = current.next.next;
+			}
+			current = current.next;
+		}
+		return this.head;
+	}
+
+	recursivelyDeleteAtIndex(n) {
+		if (this.head === null) {
+			return null;
+		} else if (n === 0) {
+			return this.head.next;
+		}
+		this.head = this.head.next;
+		return this.recursivelyDeleteAtIndex(n - 1);
+	}
 }
 
 const LL = new LinkedList();
-LL.addNode(1);
-LL.addNode(2);
-LL.addNode(3);
-LL.addNode(4);
-LL.addNode(5);
+LL.addNode(12);
+LL.addNode(14);
+LL.addNode(16);
+LL.addNode(18);
+LL.addNode(20);
 LL.listNode();
+console.log("After adding some data\n");
 LL.insertNodeFront(10);
+LL.addNode(22);
 LL.listNode();
+console.log("After adding head and tail data\n");
 LL.deleteTailNode();
 LL.listNode();
+console.log("After deleting tail data\n");
 LL.deleteHeadNode();
 LL.listNode();
-console.log(LL.findMiddle())
+console.log("After deleting head data\n");
+console.log("middle =>", LL.findMiddle());
+LL.deleteAtIndex(3);
+LL.listNode();
+console.log("After delting Nth data\n");
+LL.recursivelyDeleteAtIndex(2);
+LL.listNode();
+console.log("After recursively delting Nth data\n");
