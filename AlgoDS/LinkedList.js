@@ -121,6 +121,33 @@ class LinkedList {
 		this.head = this.head.next;
 		return this.recursivelyDeleteAtIndex(n - 1);
 	}
+
+	removeDuplicates() {
+		const uniqueVal = new Set();
+		let current = this.head;
+
+		while (current) {
+			uniqueVal.add(current.node);
+			current = current.next;
+		}
+
+		const uniqueArr = [...uniqueVal];
+		this.head = null;
+
+		uniqueArr.forEach(value => {
+			const newNode = new Node(value);
+			if (!this.head) {
+				this.head = newNode;
+			} else {
+				let current = this.head;
+				while (current.next) {
+					current = current.next;
+				}
+				current.next = newNode;
+			}
+		});
+		return this.head;
+	}
 }
 
 const LL = new LinkedList();
@@ -148,3 +175,9 @@ console.log("After delting Nth data\n");
 LL.recursivelyDeleteAtIndex(2);
 LL.listNode();
 console.log("After recursively delting Nth data\n");
+LL.addNode(20);
+LL.addNode(22);
+LL.listNode();
+console.log("After adding some data\n");
+LL.removeDuplicates();
+console.log("Unique Value of Node\n");
