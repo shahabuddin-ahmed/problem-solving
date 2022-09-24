@@ -42,3 +42,24 @@ class Solution {
 }
   
 module.exports = Solution;
+
+// another top solutions
+// class Solution {
+// 	/**
+// 	 * Checks if two input binary trees are mirror images
+// 	 * of each other.
+// 	 *
+// 	 * @param {TreeNode} t1 Root TreeNode of the first tree.
+// 	 * @param {TreeNode} t2 Root TreeNode of the second tree.
+// 	 * @return {boolean} True if the input trees are mirror images of each other.
+// 	 */
+// 	areMirrored(t1, t2) {
+// 	  if (t1 === null && t2 === null) return true;
+// 	  else if (t1 === null || t2 === null) return false;
+// 	  else if (t1.data !== t2.data) return false;
+// 	  else return this.areMirrored(t1.left, t2.right) &&
+// 		  this.areMirrored(t1.right, t2.left);
+// 	}
+//   }
+  
+//   module.exports = Solution;
