@@ -10,8 +10,7 @@
 
 | Operations | Complexity |
 | ---------- | ---------- |
-
-| push() | O(1) |
-| pop() O(1) |
-| isEmpty() | O(1) |
-| size() | O(1) |
+| push()     | O(1)       |
+| pop()      | O(1)       |
+| isEmpty()  | O(1)       |
+| size()     | O(1)       |
