@@ -7,7 +7,7 @@ class Solution {
 	 */
 	getHeight(root) {
 		if (!root) {
-			return;
+			return 0;
 		}
 		
 		return 1 + Math.max(this.getHeight(root.left), this.getHeight(root.right));
