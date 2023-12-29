@@ -15,8 +15,6 @@ var canFinish = function (numCourses, prerequisites) {
         }
     }
 
-    console.log(preMap);
-
     for (let key in preMap) {
         if (!dfs(key, preMap, visited)) {
             return false;
