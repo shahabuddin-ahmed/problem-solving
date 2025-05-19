@@ -16,3 +16,15 @@ var moveZeroes = function (nums) {
 
     return nums;
 };
+
+// optimized solution
+var moveZeroes = function(nums) {
+    let nonZeroPos = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== 0) {
+            [nums[nonZeroPos], nums[i]] = [nums[i], nums[nonZeroPos]];
+            nonZeroPos++;
+        }
+    }
+};
