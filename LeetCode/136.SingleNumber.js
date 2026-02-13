@@ -20,3 +20,31 @@ function singleNumber(nums) {
 
 const result = singleNumber([]);
 console.log(result);
+
+// ✅ 1. Using a Set
+var singleNumber = function(nums) {
+    const numSet = new Set();
+
+    for (let num of nums) {
+        if (numSet.has(num)) {
+            numSet.delete(num);
+        } else {
+            numSet.add(num);
+        }
+    }
+
+	numSet
+
+    // The only number left is the single number
+    return [...numSet][0];
+};
+
+// ✅ Best Solution: XOR Trick (Bit Manipulation)
+var singleNumber = function(nums) {
+    let result = 0;
+    for (let num of nums) {
+        result ^= num; // XOR with current number
+    }
+    return result;
+};
+

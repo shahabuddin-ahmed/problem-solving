@@ -19,12 +19,11 @@ var moveZeroes = function (nums) {
 
 // optimized solution
 var moveZeroes = function(nums) {
-    let nonZeroPos = 0;
-
+    let position = 0;
     for (let i = 0; i < nums.length; i++) {
         if (nums[i] !== 0) {
-            [nums[nonZeroPos], nums[i]] = [nums[i], nums[nonZeroPos]];
-            nonZeroPos++;
+            [nums[position], nums[i]] = [nums[i], nums[position]];
+            position++;
         }
     }
 };
