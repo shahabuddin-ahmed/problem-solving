@@ -9,7 +9,7 @@ function maxAttentMeeting(arr) {
     if (!arr.length) {
         return 0;
     }
-    arr.sort((a, b) => a[0] - b[0]);
+    arr.sort((a, b) => a[1] - b[1]);
     let lastEnd = arr[0][1],
         counter = 1;
 
